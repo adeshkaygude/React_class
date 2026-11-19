@@ -18,15 +18,24 @@ import JobProfile from "./components/forms-demo/JobProfile";
 import StyledComp from "./components/forms-demo/StyleComponent";
 import JssStyle from "./components/forms-demo/JSStyle";
 import Product from "./components/Product/Product";
+import MaterialUi from "./components/material_ui/MaterialUi";
+import MuiLayout from "./components/material_ui/MuiLayout";
+import MUIHeader from "./components/material_ui/MUIHeader";
+import ImageSlider from "./components/material_ui/ImageSlider";
+import ContextDemo from "./components/contextDemo/ContextDemo";
+import Main_Com from "./components/task/Main_Com";
+import MainCollage from "./components/Context_Api/MainCollage";
+import Main_component from "./components/Context_task/Main_component";
+import Parent from "./components/TableUser/Parent";
 
 const App = () => {
   return (
     <div>
-      <h2>Welcome</h2>
+      {/* <h2>Welcome</h2> */}
 
-      <h3>
+      {/* <h3>
         <TimeWatch />
-      </h3>
+      </h3> */}
 
       {/* <hr /> */}
 
@@ -72,7 +81,17 @@ const App = () => {
       {/* <hr /> */}
       {/* <JssStyle /> */}
       {/* <ProductForm /> */}
-      <Product />
+      {/* <Product /> */}
+      {/* <MaterialUi /> */}
+      {/* <MUIHeader />
+      <MuiLayout />
+      <ImageSlider /> */}
+      {/* <ContextDemo /> */}
+      {/* <Main_Com /> */}
+
+      {/* <MainCollage /> */}
+      {/* <Main_component /> */}
+      <Parent />
     </div>
   );
 };
