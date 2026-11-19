@@ -26,7 +26,8 @@ import ContextDemo from "./components/contextDemo/ContextDemo";
 import Main_Com from "./components/task/Main_Com";
 import MainCollage from "./components/Context_Api/MainCollage";
 import Main_component from "./components/Context_task/Main_component";
-import Parent from "./components/TableUser/Parent";
+// import Parent from "./components/TableUser/Parent";
+import ParentSample from "./components/practice_context_API/ParentSample";
 
 const App = () => {
   return (
@@ -91,7 +92,8 @@ const App = () => {
 
       {/* <MainCollage /> */}
       {/* <Main_component /> */}
-      <Parent />
+      {/* <Parent /> */}
+      <ParentSample />
     </div>
   );
 };
