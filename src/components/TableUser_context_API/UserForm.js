@@ -21,7 +21,7 @@ const UserForm = () => {
   return (
     <div
       style={{
-        backgroundColor: "lightgreen",
+        backgroundColor: "pink",
         padding: 20,
         width: "40%",
       }}

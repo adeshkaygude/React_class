@@ -34,7 +34,7 @@ const Parent = () => {
   };
 
   return (
-    <div>
+    <div style={{backgroundColor:"yellow"}}>
       <h2>Parent Component</h2>
 
       <TransferData.Provider

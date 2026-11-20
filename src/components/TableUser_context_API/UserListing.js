@@ -7,7 +7,7 @@ const UserListing = () => {
   return (
     <div
       style={{
-        backgroundColor: "lightcoral",
+        backgroundColor: "brown",
         padding: 20,
         width: "60%",
       }}
@@ -28,7 +28,7 @@ const UserListing = () => {
             <tr key={user.id}>
               <td>{user.name}</td>
               <td>{user.mobile}</td>
-              <td>******</td>
+              <td>{user.password}</td>
             </tr>
           ))}
         </tbody>
