@@ -31,9 +31,6 @@ const Modal_Player = ({ selectedPlayer, handleClose }) => {
             textAlign: "center",
           }}
         >
-          {/* Close Button */}
-          <button onClick={handleClose}>X</button>
-
           {/* Selected Player ची माहिती */}
           {selectedPlayer && (
             <>
@@ -50,6 +47,8 @@ const Modal_Player = ({ selectedPlayer, handleClose }) => {
               <p>Village: {selectedPlayer.village}</p>
             </>
           )}
+          {/* Close Button */}
+          <button onClick={handleClose}>close</button>
         </div>
       </section>
     </div>
