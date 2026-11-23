@@ -1,7 +1,8 @@
 import React from "react";
 import ShowPlayers from "./ShowPlayers";
 
-const PlayerSampleMain = () => {
+const Player_sample_main = () => {
+  // सर्व क्रिकेटर्सची माहिती Array मध्ये store केली आहे
   const players = [
     {
       id: 1,
@@ -84,11 +85,13 @@ const PlayerSampleMain = () => {
       village: "Roorkee",
     },
   ];
+
   return (
     <div>
+      {/* Players चा संपूर्ण data ShowPlayers ला पाठवला */}
       <ShowPlayers players={players} />
     </div>
   );
 };
 
-export default PlayerSampleMain;
+export default Player_sample_main;

@@ -1,8 +1,9 @@
 import React from "react";
 
-const ModalPlayer = ({ selectedPlayer, handleClose }) => {
+const Modal_Player = ({ selectedPlayer, handleClose }) => {
   return (
     <div>
+      {/* पूर्ण Screen वर Background तयार केला */}
       <section
         style={{
           width: "100vw",
@@ -17,6 +18,7 @@ const ModalPlayer = ({ selectedPlayer, handleClose }) => {
           zIndex: 9999,
         }}
       >
+        {/* Main Modal Box */}
         <div
           style={{
             backgroundColor: "#fff",
@@ -29,18 +31,23 @@ const ModalPlayer = ({ selectedPlayer, handleClose }) => {
             textAlign: "center",
           }}
         >
+          {/* Selected Player ची माहिती */}
           {selectedPlayer && (
             <>
-              <h2>{selectedPlayer?.player}</h2>
+              <h2>{selectedPlayer.player}</h2>
+
               <img
-                src={selectedPlayer?.avatar}
-                alt={selectedPlayer?.player}
+                src={selectedPlayer.avatar}
+                alt={selectedPlayer.player}
                 width="200"
               />
-              <p>{selectedPlayer?.caption}</p>
-              <p>village : {selectedPlayer.village}</p>
+
+              <p>{selectedPlayer.caption}</p>
+
+              <p>Village: {selectedPlayer.village}</p>
             </>
           )}
+          {/* Close Button */}
           <button onClick={handleClose}>close</button>
         </div>
       </section>
@@ -48,4 +55,4 @@ const ModalPlayer = ({ selectedPlayer, handleClose }) => {
   );
 };
 
-export default ModalPlayer;
+export default Modal_Player;
