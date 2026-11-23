@@ -1,7 +1,7 @@
 import React from "react";
 import { createPortal } from "react-dom";
 
-const Dialog_Portal = ({ open, handleClose }) => {
+const DialogPortal = ({ open, handleClose }) => {
   return (
     <>
       {/* open true असेल तरच Dialog दाखवायचा */}
@@ -40,4 +40,4 @@ const Dialog_Portal = ({ open, handleClose }) => {
   );
 };
 
-export default Dialog_Portal;
+export default DialogPortal;

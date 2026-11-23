@@ -1,56 +1,52 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { PlayersContext } from "./PlayersContext";
+
 import Playerdialog from "./Playerdialog";
 
-const ShowPlayers = ({ players }) => {
-  // सुरुवातीला कोणताही Player Select केलेला नाही
-  const [open, setopen] = useState(null);
+const ShowPlayers = () => {
+  const players = useContext(PlayersContext);
 
-  // open मध्ये असलेल्या ID चा Player शोधणे
-  const selectedPlayer = players.find((item) => item.id === open);
+  const [open, setOpen] = useState(null);
 
-  // Button वर क्लिक केल्यावर Player ची ID Store होईल
-  const handlebutton = (id) => {
-    setopen(id);
+  const handlbutton = (id) => {
+    setOpen(id);
   };
+  const selectedPlayer = players.find((item) => item?.id === open);
 
-  // Dialog Close करण्यासाठी State null करणे
   const handleClose = () => {
-    setopen(null);
+    setOpen(null);
   };
 
   return (
-    <div>
-      <h2>Players List</h2>
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {players.map((item) => (
+        <div
+          key={item?.id}
+          style={{
+            padding: 10,
+            margin: 10,
+            backgroundColor: item?.id % 2 === 0 ? "yellow" : "pink",
+          }}
+        >
+          <img src={item?.avatar} alt={item?.player} width={150} />
+          <h2>{item?.caption}</h2>
+          <p>{item?.player}</p>
+          <p>vilage : {item?.village}</p>
 
-      {/* सर्व Players दाखवण्यासाठी map वापरला */}
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {players.map((item) => (
-          <div
-            key={item.id}
-            style={{
-              backgroundColor: item.id % 2 === 0 ? "yellow" : "orange",
-              margin: 5,
-              padding: 10,
-              width: 150,
-            }}
-          >
-            {/* Player Image */}
-            <img src={item.avatar} alt={item.player} width="100" />
+          <button onClick={() => handlbutton(item.id)}> open Dialog</button>
+        </div>
+      ))}
 
-            <h3>{item.caption}</h3>
-
-            <p>Player: {item.player}</p>
-
-            <p>Village: {item.village}</p>
-
-            {/* Click केल्यावर त्या Player ची ID पाठवली जाते */}
-            <button onClick={() => handlebutton(item.id)}>Open Dialog</button>
-          </div>
-        ))}
-      </div>
-
-      {/* Selected Player आणि Close Function Dialog ला पाठवले */}
-      <Playerdialog selectedPlayer={selectedPlayer} handleClose={handleClose} />
+      <PlayersContext value={{ handleClose, selectedPlayer }}>
+        <Playerdialog />
+      </PlayersContext>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Dialog_Portal from "./Dialog_Portal";
+import DialogPortal from "./DialogPortal";
 
 const ShowData = () => {
   // Dialog_Portal open किंवा close करण्यासाठी State
@@ -21,7 +21,7 @@ const ShowData = () => {
       <button onClick={handleOpen}>Open Dialog_Portal</button>
 
       {/* Dialog_Portal Component ला Props पाठवले */}
-      <Dialog_Portal open={open} handleClose={handleClose} />
+      <DialogPortal open={open} handleClose={handleClose} />
     </div>
   );
 };

@@ -1,24 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { PlayersContext } from "./PlayersContext";
 import { createPortal } from "react-dom";
+import ModalPlayer from "./ModalPlayer";
 
-import Modal_Player from "./Modal_Player";
-
-const Playerdialog = ({ selectedPlayer, handleClose }) => {
+const Playerdialog = () => {
+  const { handleClose, selectedPlayer } = useContext(PlayersContext);
   return (
-    <>
-      {/* Player Select असेल तरच Dialog दाखवायचा */}
-      {selectedPlayer &&
-        createPortal(
-          // Modal_Player ला Selected Player आणि Close Function पाठवले
-          <Modal_Player
-            selectedPlayer={selectedPlayer}
-            handleClose={handleClose}
-          />,
-
-          // Dialog या HTML element मध्ये Render होईल
-          document.getElementById("dialog"),
-        )}
-    </>
+    selectedPlayer &&
+    createPortal(
+      <PlayersContext value={{ handleClose, selectedPlayer }}>
+        <ModalPlayer />
+      </PlayersContext>,
+      document.getElementById("dialog"),
+    )
   );
 };
 

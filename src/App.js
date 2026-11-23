@@ -32,8 +32,9 @@
 // import Parent from "./components/TableUser_context_API/Parent";
 // import SampleParent from "./components/Portal-demo/SampleParent";
 // import playerParent from "./components/PortalTask/playerParent";
-import ParentPortal from "./components/Portal_practice/Parent_Portal";
-import Player_sample_main from "./components/Sample______/Player_sample_main";
+// import ParentPortal from "./components/Portal_practice/Parent_Portal";
+import PlayersampleMain from "./components/Sample______/PlayersampleMain";
+
 // import PlayerSampleMain from "./components/Sample______/Player_sample_main";
 
 const App = () => {
@@ -106,7 +107,7 @@ const App = () => {
       {/* <playerParent /> */}
       {/* <playerParent /> */}
       {/* <ParentSample /> */}
-      <Player_sample_main />
+      <PlayersampleMain />
       {/* <ParentPortal /> */}
     </div>
   );

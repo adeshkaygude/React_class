@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { PlayersContext } from "./PlayersContext";
 
-const Modal_Player = ({ selectedPlayer, handleClose }) => {
+const ModalPlayer = () => {
+  const { handleClose, selectedPlayer } = useContext(PlayersContext);
   return (
     <div>
-      {/* पूर्ण Screen वर Background तयार केला */}
       <section
         style={{
           width: "100vw",
@@ -18,10 +19,9 @@ const Modal_Player = ({ selectedPlayer, handleClose }) => {
           zIndex: 9999,
         }}
       >
-        {/* Main Modal Box */}
         <div
           style={{
-            backgroundColor: "#fff",
+            backgroundColor: "#ebc3c3",
             width: "80%",
             height: "80%",
             minHeight: 500,
@@ -31,7 +31,6 @@ const Modal_Player = ({ selectedPlayer, handleClose }) => {
             textAlign: "center",
           }}
         >
-          {/* Selected Player ची माहिती */}
           {selectedPlayer && (
             <>
               <h2>{selectedPlayer.player}</h2>
@@ -47,12 +46,11 @@ const Modal_Player = ({ selectedPlayer, handleClose }) => {
               <p>Village: {selectedPlayer.village}</p>
             </>
           )}
-          {/* Close Button */}
-          <button onClick={handleClose}>close</button>
+          <button onClick={handleClose}> close Dialog</button>
         </div>
       </section>
     </div>
   );
 };
 
-export default Modal_Player;
+export default ModalPlayer;
