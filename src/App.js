@@ -107,7 +107,7 @@ const App = () => {
       {/* <playerParent /> */}
       {/* <ParentSample /> */}
       <Player_sample_main />
-      <ParentPortal />
+      {/* <ParentPortal /> */}
     </div>
   );
 };
