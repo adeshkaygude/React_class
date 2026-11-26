@@ -5,6 +5,7 @@ import ModalPlayer from "./ModalPlayer";
 
 const Playerdialog = () => {
   const { handleClose, selectedPlayer } = useContext(PlayersContext);
+ 
   return (
     selectedPlayer &&
     createPortal(

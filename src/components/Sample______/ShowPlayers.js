@@ -12,6 +12,7 @@ const ShowPlayers = () => {
     setOpen(id);
   };
   const selectedPlayer = players.find((item) => item?.id === open);
+  console.log(selectedPlayer);
 
   const handleClose = () => {
     setOpen(null);
